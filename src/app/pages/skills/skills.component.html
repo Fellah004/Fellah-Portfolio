@@ -1,0 +1,63 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <!-- Header Badge & Title -->
+    <div class="section-badge-wrapper">
+      <span class="section-badge">TECHNICAL EXPERTISE</span>
+    </div>
+    <h1 class="section-title">TECHNICAL SKILLS</h1>
+    <p class="section-subtitle">
+      Comprehensive technical competencies across modern backend frameworks, reactive frontend engineering, distributed architectures, and algorithmic problem-solving.
+    </p>
+
+    <!-- Filter Buttons Bar -->
+    <div class="skills-filter-bar">
+      @for (filter of filters; track filter.id) {
+        <button 
+          (click)="setFilter(filter.id)" 
+          class="filter-pill-btn" 
+          [class.active]="activeFilter === filter.id">
+          {{ filter.label }}
+        </button>
+      }
+    </div>
+
+    <!-- 6 Categories Grid -->
+    <div class="skills-grid">
+      @for (cat of filteredCategories; track cat.id) {
+        <div class="glass-card skill-category-card">
+          <div class="category-header">
+            <span class="category-icon">{{ getCategoryIcon(cat.id) }}</span>
+            <div class="category-title-wrap">
+              <h2 class="category-title">{{ cat.title }}</h2>
+              <span class="category-count">{{ cat.skills.length }} Technologies</span>
+            </div>
+          </div>
+
+          <div class="skills-tag-list">
+            @for (skill of cat.skills; track skill) {
+              <div class="skill-pill">
+                <span class="pill-dot"></span>
+                <span class="pill-name">{{ skill }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Bottom Page Navigation Links -->
+    <div class="page-navigation-actions">
+      <a routerLink="/portfolio/projects" class="btn-primary">
+        <span>View Implemented Projects</span>
+        <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <a routerLink="/portfolio/experience" class="btn-secondary">
+        <span>Professional Experience</span>
+      </a>
+    </div>
+  </div>
+</div>

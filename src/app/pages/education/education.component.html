@@ -1,0 +1,59 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <!-- Header Badge & Title -->
+    <div class="section-badge-wrapper">
+      <span class="section-badge">ACADEMIC FOUNDATION</span>
+    </div>
+    <h1 class="section-title">EDUCATION &amp; QUALIFICATIONS</h1>
+    <p class="section-subtitle">
+      A consistent academic track record across engineering and foundational schooling, combining theoretical rigor in algorithms, systems engineering, and mathematics.
+    </p>
+
+    <!-- 3 Education Cards Grid -->
+    <div class="education-grid">
+      @for (item of educationList; track item.id) {
+        <div class="glass-card edu-card" [class.primary-card]="item.isPrimary">
+          <div class="edu-card-top">
+            <span class="edu-step-num">{{ item.number }}</span>
+            <span class="edu-duration-tag">{{ item.duration }}</span>
+          </div>
+
+          <h2 class="edu-degree">{{ item.degree }}</h2>
+          <p class="edu-institution">{{ item.institution }}</p>
+
+          <div class="edu-score-box">
+            <span class="edu-score-label">{{ item.scoreLabel }}</span>
+            <span class="edu-score-val">{{ item.scoreValue }}</span>
+          </div>
+
+          <p class="edu-description">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- 4 Education Statistics Strip (Only the 4 exact stats!) -->
+    <div class="glass-card stats-strip">
+      @for (stat of statistics; track stat.label) {
+        <div class="stat-box">
+          <span class="stat-number">{{ stat.value }}</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+
+    <!-- Bottom Page Navigation Links -->
+    <div class="page-navigation-actions">
+      <a routerLink="/portfolio/achievements" class="btn-primary">
+        <span>View Achievements &amp; Certifications</span>
+        <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <a routerLink="/portfolio/contact" class="btn-secondary">
+        <span>Contact Information</span>
+      </a>
+    </div>
+  </div>
+</div>

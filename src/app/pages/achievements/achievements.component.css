@@ -1,0 +1,150 @@
+.page-wrapper {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+}
+
+.page-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Filter bar */
+.achievements-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.filter-pill-btn {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  background: rgba(23, 32, 51, 0.6);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.filter-pill-btn:hover {
+  background: rgba(30, 41, 59, 0.9);
+  color: #FFFFFF;
+  border-color: var(--border-accent);
+}
+
+.filter-pill-btn.active {
+  background: var(--accent-gradient);
+  color: #0B1120;
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+/* Achievements Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.achievement-card {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.achievement-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.ach-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.ach-category-icon {
+  font-size: 1.6rem;
+}
+
+.ach-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ach-badge {
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-primary);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid var(--border-accent);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.ach-year {
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.ach-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.ach-org {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-highlight);
+  margin-bottom: 1rem;
+}
+
+.ach-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+/* Page Navigation Actions */
+.page-navigation-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-arrow-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 0.35rem;
+}
+
+@media (max-width: 500px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}

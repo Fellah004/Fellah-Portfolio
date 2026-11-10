@@ -1,0 +1,194 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="glow-bg-radial"></div>
+
+    <div class="hero-container">
+      <!-- Profile Photo Card with Halo -->
+      <div class="hero-avatar-wrapper">
+        <div class="avatar-halo"></div>
+        <div class="avatar-card">
+          <img [src]="personalInfo.photoUrl" [alt]="personalInfo.name" class="avatar-img" />
+        </div>
+      </div>
+
+      <!-- Greeting Badge -->
+      <div class="greeting-badge">
+        <span class="sparkle">✨</span>
+        <span>HELLO, I'M</span>
+      </div>
+
+      <!-- Main Name Heading -->
+      <h1 class="hero-name">{{ personalInfo.name }}</h1>
+
+      <!-- Professional Subtitle -->
+      <div class="hero-title-pill">
+        <span>{{ personalInfo.title }}</span>
+      </div>
+
+      <!-- Headline -->
+      <h2 class="hero-headline">{{ personalInfo.headline }}</h2>
+
+      <!-- Bio / Introduction -->
+      <p class="hero-intro">
+        {{ personalInfo.introduction }}
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-cta-group">
+        <a routerLink="/portfolio/projects" class="btn-primary">
+          <span>View My Projects</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <a routerLink="/portfolio/about" class="btn-secondary">
+          <span>About Me</span>
+        </a>
+
+        <a [href]="personalInfo.resumeUrl" download="Fellah_A_Resume.pdf" class="btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="hero-social-row">
+        <a [href]="personalInfo.githubUrl" target="_blank" rel="noopener noreferrer" class="social-chip" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <a [href]="personalInfo.linkedinUrl" target="_blank" rel="noopener noreferrer" class="social-chip" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+
+        <a [href]="'mailto:' + personalInfo.email" class="social-chip" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Explore Navigation Grid -->
+  <section class="quick-explore-section">
+    <div class="section-container">
+      <div class="section-badge-wrapper">
+        <span class="section-badge">PORTFOLIO OVERVIEW</span>
+      </div>
+      <h2 class="section-title">EXPLORE MY WORK</h2>
+      <p class="section-subtitle">
+        Jump directly into key chapters of my technical journey, core competencies, and academic background.
+      </p>
+
+      <div class="explore-grid">
+        <a routerLink="/portfolio/about" class="explore-card">
+          <div class="explore-icon-box">👤</div>
+          <h3 class="explore-card-title">About Me</h3>
+          <p class="explore-card-desc">Professional background, core values, engineering mindset, and career aspirations.</p>
+          <span class="explore-card-link">Read Biography →</span>
+        </a>
+
+        <a routerLink="/portfolio/skills" class="explore-card">
+          <div class="explore-icon-box">⚡</div>
+          <h3 class="explore-card-title">Technical Skills</h3>
+          <p class="explore-card-desc">Java 21, Spring Boot, Microservices, Angular, MySQL, Docker, and core CS fundamentals.</p>
+          <span class="explore-card-link">View Tech Stack →</span>
+        </a>
+
+        <a routerLink="/portfolio/projects" class="explore-card">
+          <div class="explore-icon-box">💻</div>
+          <h3 class="explore-card-title">Featured Projects</h3>
+          <p class="explore-card-desc">6 production-grade projects spanning microservices, AI anomaly detection, and IoT.</p>
+          <span class="explore-card-link">Explore Projects →</span>
+        </a>
+
+        <a routerLink="/portfolio/experience" class="explore-card">
+          <div class="explore-icon-box">💼</div>
+          <h3 class="explore-card-title">Experience</h3>
+          <p class="explore-card-desc">Software development trainee at Capgemini and full-stack internship at CubeAI.</p>
+          <span class="explore-card-link">View Experience →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project Spotlight (StayVista) -->
+  <section class="featured-spotlight-section">
+    <div class="section-container">
+      <div class="section-badge-wrapper">
+        <span class="section-badge">FLAGSHIP ARCHITECTURE</span>
+      </div>
+      <h2 class="section-title">FEATURED PROJECT SPOTLIGHT</h2>
+      <p class="section-subtitle">
+        A deep dive into my flagship enterprise microservices project.
+      </p>
+
+      <div class="spotlight-card glass-card">
+        <div class="spotlight-image-container">
+          <img [src]="featuredProject.imageUrl" [alt]="featuredProject.title" class="spotlight-image" />
+          <span class="spotlight-badge">{{ featuredProject.badge }}</span>
+        </div>
+
+        <div class="spotlight-content">
+          <span class="spotlight-category">{{ featuredProject.category }}</span>
+          <h3 class="spotlight-title">{{ featuredProject.title }}</h3>
+          <p class="spotlight-description">{{ featuredProject.description }}</p>
+
+          <div class="spotlight-highlights">
+            <h4 class="highlights-heading">Architecture Highlights:</h4>
+            <ul>
+              @for (point of featuredProject.highlights.slice(0, 3); track point) {
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>{{ point }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="spotlight-tech-stack">
+            @for (tech of featuredProject.technologies.slice(0, 6); track tech) {
+              <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+
+          <div class="spotlight-cta-row">
+            <a routerLink="/portfolio/projects" class="btn-primary">
+              <span>Explore All 6 Projects</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            @if (featuredProject.githubUrl) {
+              <a [href]="featuredProject.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;margin-right:8px;">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub Repository</span>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

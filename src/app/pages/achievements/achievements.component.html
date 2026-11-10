@@ -1,0 +1,60 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <!-- Header Badge & Title -->
+    <div class="section-badge-wrapper">
+      <span class="section-badge">HONORS &amp; RECOGNITIONS</span>
+    </div>
+    <h1 class="section-title">ACHIEVEMENTS &amp; CERTIFICATIONS</h1>
+    <p class="section-subtitle">
+      A documented collection of certified technical credentials, national hackathon participations, competitive innovation accolades, and departmental leadership appointments.
+    </p>
+
+    <!-- Filter Buttons Bar -->
+    <div class="achievements-filter-bar">
+      @for (filter of filters; track filter.id) {
+        <button 
+          (click)="setFilter(filter.id)" 
+          class="filter-pill-btn" 
+          [class.active]="activeFilter === filter.id">
+          {{ filter.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Achievements Grid -->
+    <div class="achievements-grid">
+      @for (item of filteredAchievements; track item.id) {
+        <div class="glass-card achievement-card">
+          <div class="ach-header">
+            <span class="ach-category-icon">{{ getCategoryIcon(item.category) }}</span>
+            <div class="ach-badge-wrap">
+              <span class="ach-badge">{{ item.badge }}</span>
+              @if (item.year) {
+                <span class="ach-year">{{ item.year }}</span>
+              }
+            </div>
+          </div>
+
+          <h2 class="ach-title">{{ item.title }}</h2>
+          <p class="ach-org">{{ item.organization }}</p>
+          <p class="ach-desc">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- Bottom Page Navigation Links -->
+    <div class="page-navigation-actions">
+      <a routerLink="/portfolio/contact" class="btn-primary">
+        <span>Get in Touch</span>
+        <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <a routerLink="/portfolio" class="btn-secondary">
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </div>
+</div>

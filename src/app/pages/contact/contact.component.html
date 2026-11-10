@@ -1,0 +1,91 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <!-- Header Badge & Title -->
+    <div class="section-badge-wrapper">
+      <span class="section-badge">CONNECT &amp; COLLABORATE</span>
+    </div>
+    <h1 class="section-title">GET IN TOUCH</h1>
+    <p class="section-subtitle">
+      I am actively seeking software engineering opportunities and technical collaborations. Reach out directly through any channel below.
+    </p>
+
+    <!-- Contact Cards Grid (No Form!) -->
+    <div class="contact-cards-grid">
+      @for (card of contactCards; track card.id) {
+        <div class="glass-card contact-card">
+          <div class="contact-card-icon">{{ card.icon }}</div>
+
+          <div class="contact-card-body">
+            <span class="card-label">{{ card.title }}</span>
+            <span class="card-val">{{ card.value }}</span>
+          </div>
+
+          <div class="contact-card-actions">
+            @if (card.href) {
+              <a [href]="card.href" 
+                 [target]="card.id === 'email' || card.id === 'phone' ? '_self' : '_blank'" 
+                 rel="noopener noreferrer" 
+                 class="btn-contact-action">
+                <span>{{ card.actionText }}</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            } @else {
+              <span class="location-static-pill">{{ card.actionText }}</span>
+            }
+
+            @if (card.id === 'email' || card.id === 'phone') {
+              <button (click)="copyToClipboard(card.value, card.id)" class="btn-copy" title="Copy to clipboard">
+                @if (copiedField === card.id) {
+                  <span class="copied-indicator">Copied!</span>
+                } @else {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                }
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Resume Download Box -->
+    <div class="glass-card resume-download-box">
+      <div class="resume-info">
+        <div class="resume-icon">📄</div>
+        <div>
+          <h2 class="resume-title">Download Official Curriculum Vitae</h2>
+          <p class="resume-subtitle">Verified 2-page developer resume detailing projects, technical skills, and academic coursework.</p>
+        </div>
+      </div>
+
+      <a [href]="personalInfo.resumeUrl" download="Fellah_A_Resume.pdf" class="btn-primary resume-dl-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download Fellah_A_Resume.pdf</span>
+      </a>
+    </div>
+
+    <!-- Bottom Page Navigation Links -->
+    <div class="page-navigation-actions">
+      <a routerLink="/portfolio" class="btn-primary">
+        <span>Back to Home</span>
+        <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <a routerLink="/portfolio/projects" class="btn-secondary">
+        <span>View Projects</span>
+      </a>
+    </div>
+  </div>
+</div>

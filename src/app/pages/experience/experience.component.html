@@ -1,0 +1,81 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <!-- Header Badge & Title -->
+    <div class="section-badge-wrapper">
+      <span class="section-badge">CAREER &amp; TRAINING</span>
+    </div>
+    <h1 class="section-title">PROFESSIONAL EXPERIENCE</h1>
+    <p class="section-subtitle">
+      Hands-on industry training and internship experiences building enterprise software systems, strengthening full-stack competencies, and adhering to production software engineering standards.
+    </p>
+
+    <!-- Timeline Experience Flow -->
+    <div class="experience-timeline">
+      @for (item of experienceList; track item.id; let idx = $index) {
+        <div class="timeline-item">
+          <!-- Left Step Marker -->
+          <div class="timeline-marker">
+            <div class="marker-dot">
+              <span>0{{ idx + 1 }}</span>
+            </div>
+            <div class="marker-line"></div>
+          </div>
+
+          <!-- Right Content Card -->
+          <div class="glass-card experience-card">
+            <div class="exp-card-header">
+              <div class="exp-title-block">
+                <span class="company-badge">{{ item.company }}</span>
+                <h2 class="position-title">{{ item.position }}</h2>
+              </div>
+              <div class="duration-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>{{ item.duration }}</span>
+              </div>
+            </div>
+
+            <p class="exp-description">{{ item.description }}</p>
+
+            <div class="learning-areas-box">
+              <h3 class="learning-areas-title">Core Competencies &amp; Technical Scope:</h3>
+              <ul class="learning-list">
+                @for (area of item.keyLearningAreas; track area) {
+                  <li>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>{{ area }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <div class="exp-tech-tags">
+              @for (tech of item.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Bottom Page Navigation Links -->
+    <div class="page-navigation-actions">
+      <a routerLink="/portfolio/education" class="btn-primary">
+        <span>View Academic Qualifications</span>
+        <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <a routerLink="/portfolio/achievements" class="btn-secondary">
+        <span>View Achievements &amp; Certifications</span>
+      </a>
+    </div>
+  </div>
+</div>

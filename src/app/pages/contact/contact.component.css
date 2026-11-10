@@ -1,0 +1,210 @@
+.page-wrapper {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+}
+
+.page-container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Contact Cards Grid */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.contact-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.contact-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-label {
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.card-val {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  word-break: break-all;
+}
+
+.contact-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-contact-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.btn-contact-action svg {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-contact-action:hover {
+  color: var(--accent-highlight);
+}
+
+.location-static-pill {
+  font-family: var(--font-accent);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.btn-copy {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.btn-copy svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-copy:hover {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: var(--border-accent);
+  color: var(--accent-primary);
+}
+
+.copied-indicator {
+  position: absolute;
+  right: 36px;
+  background: var(--accent-primary);
+  color: #0B1120;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* Resume Download Box */
+.resume-download-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.25rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(23, 32, 51, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid var(--border-accent);
+}
+
+.resume-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.resume-icon {
+  font-size: 2.5rem;
+}
+
+.resume-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+}
+
+.resume-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.resume-dl-btn {
+  white-space: nowrap;
+}
+
+.resume-dl-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Page Navigation Actions */
+.page-navigation-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-arrow-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .resume-download-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resume-dl-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
